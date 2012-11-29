@@ -331,10 +331,12 @@
     {
         _period = period;
         
-        if (!_currentDate)
-        {
+        
+        //Changed by JC so that we can set the month do what we want before popping up the calendar.
+        //if (!_currentDate)
+        //{
             self.currentDate = period.startDate;
-        }
+        //}
         
         if ([self.delegate respondsToSelector:@selector(periodChanged:)])
         {
