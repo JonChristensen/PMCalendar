@@ -332,6 +332,8 @@ NSString *kPMCalendarRedrawNotification = @"kPMCalendarRedrawNotification";
                                              selector:@selector(didRotate:) 
                                                  name:UIDeviceOrientationDidChangeNotification
                                                object:nil];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"PMCalendarPresented" object:self];
 
     if (animated)
     {
@@ -357,6 +359,7 @@ NSString *kPMCalendarRedrawNotification = @"kPMCalendarRedrawNotification";
         }
     };
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"PMCalendarRemoved" object:self];
     
     if (animated)
     {
